@@ -1,8 +1,14 @@
+    <?php include("includes/header.php"); ?>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <?php include('includes/top_nav.php') ?>
+            <?php include('includes/side_nav.php') ?>
+        </nav>
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Blank Page
+                            Users
                             <small>Subheading</small>
                         </h1>
                         <ol class="breadcrumb">
@@ -16,3 +22,5 @@
                     </div>
                 </div>
             </div>
+        </div>
+    <?php include("includes/footer.php"); ?>
