@@ -10,16 +10,16 @@ Class User {
     public $last_name;
 
     public static function find_all_users(){
-        return self::find_this_query("SELECT * FROM users;");
+        return self::run_query_fetch_data("SELECT * FROM users;");
     }
 
     public static function find_user_by_id($id) {
-        $the_result_array = self::find_this_query("
+        $result_array = self::run_query_fetch_data("
             SELECT * from users WHERE id=$id LIMIT 1");
-        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+        return !empty($result_array) ? array_shift($result_array) : false;
     }
 
-    protected static function find_this_query($sql){
+    protected static function run_query_fetch_data($sql){
         global $database;
         $result_set = $database->query($sql);
         $the_object_array = Array();
