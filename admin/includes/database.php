@@ -24,6 +24,10 @@ Class Database{
 
     }
     
+    public function the_insert_id(){
+        return $this->connection->insert_id;
+    }
+    
     private function confirm_query($result) {
         if(!$result){
             die('Query Failed: '.$this->connection->connect_error);
@@ -32,10 +36,6 @@ Class Database{
 
     public function escape_string($string) {
         return $this->connection->real_escape_string($string);
-    }
-
-    public function the_insert_id(){
-        return $this->connection->insert_id;
     }
 }
 

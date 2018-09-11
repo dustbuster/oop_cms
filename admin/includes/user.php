@@ -14,8 +14,16 @@ Class User {
     }
 
     public static function find_user_by_id($id) {
-        $result_array = self::run_query_fetch_data("
-            SELECT * from users WHERE id=$id LIMIT 1");
+        $result_array = self::run_query_fetch_data("SELECT * from users WHERE id=$id LIMIT 1");
+        return !empty($result_array) ? array_shift($result_array) : false;
+    }
+
+    public static function verify_user(){
+        global $database;
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+        $sql =  "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' LIMIT 1";
+        $result_array = self::run_query_fetch_data($sql);
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 

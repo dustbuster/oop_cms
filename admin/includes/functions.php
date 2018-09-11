@@ -8,7 +8,7 @@ function classAutoloader($class){
     }
 }
 
-function redirect($location){
+function redirect($location = 'index.php'){
     header('Location: '.$location);
 }
 

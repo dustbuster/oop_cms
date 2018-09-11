@@ -3,7 +3,7 @@
 class Session {
 
 
-    protected $signed_in = false;
+    public $signed_in = false;
     public $user_id;
 
     // add user 
@@ -31,13 +31,13 @@ class Session {
     }
 
     private function check_the_login(){
-
         if(isset($_SESSION['user_id'])){
             $this->user_id = $_SESSION['user_id'];
             $this->signed_in = true;
         }else{
+            unset($_SESSION['user_id']);
             unset($this->user_id);
-            $this->signed_in = true;
+            $this->signed_in = false;
         }
 
     }

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <?php 
 require_once('init.php'); 
-if(!$session->is_signed_in()){redirect('login.php');}
+// if(!$session->is_signed_in()){redirect('login.php');}
 // just did this
 ?>
 <html lang="en">
@@ -21,7 +21,7 @@ if(!$session->is_signed_in()){redirect('login.php');}
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+    <link href="css/sb-admin.css" rel="stylesheet">
     <style>
     /*!
  * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
