@@ -18,7 +18,7 @@ Class User {
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 
-    public static function verify_user(){
+    public static function verify_user($username, $password){
         global $database;
         $username = $database->escape_string($username);
         $password = $database->escape_string($password);
